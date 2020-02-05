@@ -8,9 +8,15 @@ public class Factorials {
 	public static int factorial(int input){
 		
 		int value = 0;
+		double value2 = input;
+		
+		
 		while (input > 1) {
 			value++;
 			input = input / value;
+			if (Math.floor(input) != value2)		
+				System.out.println(input + "  is not a factorial!");
+			
 			System.out.println("Step "+value+", input is now "+input);
 		}
 		if (input == 0) return 0;
