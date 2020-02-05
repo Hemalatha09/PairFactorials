@@ -3,23 +3,20 @@ package com.qa.factorial;
 public class Factorials {
 
 	public static void main(String[] args) {
-		System.out.println(factorial(479001601));
+		System.out.println(factorial(39916800));
 	}
 	public static int factorial(int input){
 		
 		int value = 0;
-		double value2 = input;
+		double dblInput = (double) input;
 		
 		
-		while (input > 1) {
+		while (dblInput > 1.0 && Math.floor(dblInput) == dblInput) {
 			value++;
-			input = input / value;
-			if (Math.floor(input) != value2)		
-				System.out.println(input + "  is not a factorial!");
-			
-			System.out.println("Step "+value+", input is now "+input);
+			dblInput = dblInput / value;
+			System.out.println("Step "+value+", input is now "+dblInput);
 		}
-		if (input == 0) return 0;
+		if (Math.floor(dblInput) != dblInput) return 0;
 		else return value;
 		
 //		for(int i =1; i<10;i++) {
